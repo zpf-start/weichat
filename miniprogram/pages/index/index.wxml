@@ -1,0 +1,29 @@
+<view>
+  <swiper duration="500" indicator-dots="true"
+  autoplay="true" interval="4000" circular="true">
+  <view wx:for="{{bannerPhotos}}" wx:key="index">
+   <swiper-item>
+      <image src="{{item.photoUrl}}"></image>
+    </swiper-item>
+  </view>
+  </swiper>
+</view>
+
+<view class="group">
+ <view class="group-item" wx:for="{{groups}}" wx:key="index" bindtap="showGourpImages" mark:groupId="{{item._id}}" mark:index="{{index}}">
+    <view class="notPhostUrl" wx:if="{{item.lastPhostUrl == null || item.lastPhostUrl == ''}}">
+      <text> 请添加照片</text>
+    </view>
+    <image wx:else src="{{item.lastPhostUrl}}"></image>
+    <view>{{item.groupName}}</view>
+  </view>
+</view>
+
+<view class="btn-group">
+  <view class="add-group" bindtap="addGroup">
+  添加分组
+  </view>
+   <view class="add-image" bindtap="addImages">
+   添加照片
+  </view>
+</view>

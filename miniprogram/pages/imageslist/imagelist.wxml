@@ -1,0 +1,5 @@
+<!--pages/imageslist/imagelist.wxml-->
+<view wx:for="{{images}}" wx:key="index" mark:index="{{index}}" bindlongtap="fullScreenShow">
+  <image src="{{item.photoUrl}}"></image>
+</view>
+

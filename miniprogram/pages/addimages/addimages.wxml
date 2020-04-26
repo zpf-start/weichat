@@ -1,0 +1,19 @@
+<form bindsubmit="addImages">
+  <picker range="{{groups}}"  name="groupIndex" value="{{index}}" range-key="groupName" bindchange="changeGroup">
+    {{prompt}}：
+    {{groupName}}
+  </picker>
+  <view>
+    <view wx:for="{{imagesSrc}}" wx:key="index">
+      <image src="{{item}}"></image>
+    </view>
+  </view>
+  <view class="btn-group">
+   <button type="primary" bindtap="chooseImage">选择照片</button>
+    <button type="primary" class="submit" form-type="submit">提交</button>
+  </view>
+
+   
+
+   
+</form>

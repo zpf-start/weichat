@@ -1,0 +1,6 @@
+/* pages/imageslist/imagelist.wxss */
+
+image{
+  margin-bottom:4rpx;
+  width:100%;
+}

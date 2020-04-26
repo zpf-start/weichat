@@ -1,0 +1,22 @@
+<!--pages/group/group.wxml-->
+<form bindsubmit="saveOrChangeGroup">
+  分组名
+<input name="groupName" value="{{groupName}}" placeholder="请输入分组名" focus="true"/>
+
+<button type="primary" form-type="submit">{{prompt}}</button>
+</form>
+
+<view class="group-list">
+  <view class="group-title">分组列表</view>
+
+  <view wx:for="{{groups}}" wx:key="index">
+    <view class="group-item">
+    <view class="group-item-content">{{item.groupName}}</view>
+    <view class="group-item-oper">
+      <view bindtap="changeGroupName" mark:index="{{index}}">修改</view>
+      <view bindtap="deleteGroup" mark:index="{{index}}">删除</view>
+    </view>
+   </view>
+  </view>
+
+</view>
